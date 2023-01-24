@@ -1,6 +1,10 @@
-<?php 
+<?php
 //情報全部
-$sql = "SELECT * FROM main LEFT JOIN in_out ON in_out.id = main.type LEFT JOIN income_category ON income_category.id = main.income_category LEFT JOIN spending_category ON spending_category.id = main.spending_category;";
+$sql = "SELECT * FROM main 
+    LEFT JOIN in_out ON in_out.id = main.type 
+    LEFT JOIN income_category ON income_category.id = main.income_category 
+    LEFT JOIN spending_category ON spending_category.id = main.spending_category 
+    WHERE `deleted_at`IS NULL;";
 $statement = $pdo->query($sql);
 $main = $statement->fetchAll();
 

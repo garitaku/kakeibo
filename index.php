@@ -55,6 +55,12 @@ require('select.php');
                 //     $(".category").after('<input type="text" class="form-control" id="category" placeholder="自由入力">');
                 // }
             });
+            $("#delete").on("click",function () {
+                alert("削除ボタンが押されました");                
+            });
+            $("#edit").on("click",function () {
+                alert("編集ボタンが押されました");                
+            });
         });
     </script>
     <title>家計簿アプリ</title>
@@ -88,15 +94,28 @@ require('select.php');
                     <td><?php echo $list['amount']; ?></td>
                     <td><?php echo $list['in_out_name']; ?></td>
                     <td>
-                        <?php if ($list['type']==1) {
-                        echo $list['spending_name'];
-                    }else {
-                        echo $list['income_name'];
-                    } ?>
+                        <?php
+                            if ($list['type']==1) {
+                                echo $list['spending_name'];
+                            } else {
+                                echo $list['income_name'];
+                            } ?>
                     </td>
                     <td><?php echo $list['memo']; ?></td>
-                    <td><a href=""><button>編集</button></a></td>
-                    <td><a href=""><button>削除</button></a></td>
+                    <td>
+                        <form class="mb-0" action="delete.php">
+                            <button type="submit" id="edit" class="btn btn-warning p-1">編集</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form class="mb-0" action="delete.php" method="POST">
+                            <button type="submit" id="delete" class="btn btn-danger p-1">削除</button>
+                            <input type="hidden" name="main_id" value="<?php echo $list['main_id']; ?>">
+                        </form>
+                    </td>
+                    <td>
+
+                    </td>
                 </tr>
                 <?php } ?>
             </tbody>

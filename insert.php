@@ -26,8 +26,6 @@ $stmt->bindValue(4, $category, PDO::PARAM_STR);
 $stmt->bindValue(5, $type, PDO::PARAM_STR);
 $stmt->bindValue(6, $memo, PDO::PARAM_STR);
 
-var_dump($stmt);
-
 $stmt->execute();
 
 header('Location:index.php');
