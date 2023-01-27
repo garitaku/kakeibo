@@ -4,9 +4,7 @@ require('dbconnect.php');
 $main_id = $_POST["main_id"];
 require('update_select.php');
 ?>
-<pre>
-    <?php var_dump($main); ?>
-</pre>
+
 <!-- 
 ・id → 記録データの番号（オートインクリメント設定）
 ・date → 日付項目の保存カラム
@@ -131,6 +129,7 @@ require('update_select.php');
                     <label for="memo" class="form-label">メモ</label>
                     <input type="text" name="memo" class="form-control" id="memo" value="<?php echo $main[0]['memo']; ?>" placeholder="メモを入力">
                 </div>
+                <input type="hidden" name="main_id" value="<?php echo $main[0]['main_id']; ?>">
             </div>
 
             <button type="submit" name="submit" class="btn btn-primary">更新</button>
