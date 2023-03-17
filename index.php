@@ -138,7 +138,7 @@ require('select.php');
             <div class="row">
                 <div class="mb-3 col-xl-2 col-md-4">
                     <label for="date" class="form-label">日付</label>
-                    <input type="text" name="date" class="form-control" id="date" placeholder="日付を入力">
+                    <input type="date" name="date" class="form-control" id="date" placeholder="日付を入力">
                 </div>
                 <div class="mb-3 col-xl-2 col-md-4">
                     <label for="title" class="form-label">タイトル</label>

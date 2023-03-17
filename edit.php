@@ -80,7 +80,7 @@ require('update_select.php');
             <div class="row">
                 <div class="mb-3 col-xl-2 col-md-4">
                     <label for="date" class="form-label">日付</label>
-                    <input type="text" name="date" class="form-control" id="date"
+                    <input type="date" name="date" class="form-control" id="date"
                         value="<?php echo $main[0]['date']; ?>" placeholder="日付を入力">
                 </div>
                 <div class="mb-3 col-xl-2 col-md-4">
